@@ -1,0 +1,12 @@
+<div class="row align-items-center justify-content-center">
+  <div class="col-md-4">
+    <%- if devise_mapping.omniauthable? %>
+      <%- resource_class.omniauth_providers.each do |provider| %>
+        <%= link_to omniauth_authorize_path(resource_name, provider), class: "btn btn-block btn-lg btn-social btn-#{provider}" do %>
+          <%= "Sign in with #{OmniAuth::Utils.camelize(provider)}" %>
+          <span class="fa fa-<%= provider %>"></span>
+        <% end-%>
+      <% end -%>
+    <% end -%>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 @import "bootstrap";
-
-
+@import "bootstrap-social";
+@import "font-awesome";
 
 $bg-start: #9d9181;
 $bg-end: #9e866c;
@@ -44,44 +44,6 @@ body {
       margin-top: .2em;
     }
   }
-
-  .card-links {
-    margin-bottom: 25px;
-
-    .fa {
-      margin: 0 1em;
-      font-size: 1.6em;
-
-      &:focus,
-      &:hover {
-        text-decoration: none;
-      }
-
-      &.fa-dribbble {
-        color: $dribbble-color;
-        font-weight: bold;
-
-        &:hover {
-          color: darken($dribbble-color, 10%);
-        }
-      }
-
-      &.fa-twitter {
-        color: $twitter-color;
-
-        &:hover {
-          color: darken($twitter-color, 10%);
-        }
-      }
-
-      &.fa-facebook {
-        color: $facebook-color;
-
-        &:hover {
-          color: darken($facebook-color, 10%);
-        }
-      }
-    }
-  }
 }
+
 
