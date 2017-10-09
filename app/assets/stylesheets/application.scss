@@ -10,7 +10,9 @@ $twitter-color: #68aade;
 $facebook-color: #3b5999;
 
 html {
-  padding-top: 5em;
+  @media (min-width: 979px) {
+    padding-top: 120px;
+  }
   min-height: 100%;
 }
 
