@@ -11,7 +11,14 @@
 
   <body>
     <div class="container">
-      <%= yield %>
+        <%= yield %>
+
+        <% if current_user %>
+          <div class="small text-center">
+            <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+          </div>
+        <% end %>
+      </div>
     </div>
   </body>
 </html>

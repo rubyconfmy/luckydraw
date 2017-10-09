@@ -1,0 +1,22 @@
+<div class="card card-profile text-center">
+  <%= image_tag('card-bg', class: 'card-img-top') %>
+  <div class="card-block">
+    <img class="card-img-profile" width="140" src="<%= user.avatar_url %>" alt="<%= user.name %>">
+    <h3 class="card-title">
+      <%= user.name %>
+      <br >
+      <br >
+      <small>
+        <% if user.drawn_at %>
+        <%= get_emojis(mood: :happy, count: 6) %>
+      <p>You're a winner!</p>
+      <p class="card-text small">Drawn at <%= user.drawn_at.to_s(:short) %></p>
+    <% else %>
+      <%= get_emojis(mood: :sad, count: 6) %>
+      <p>Don't panic just yet.</p>
+      <p class="card-text small">There are lots of prizes coming your way!</p>
+    <% end %>
+      </small>
+    </h3>
+  </div>
+</div>

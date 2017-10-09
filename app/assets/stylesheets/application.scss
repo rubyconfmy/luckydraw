@@ -10,6 +10,7 @@ $twitter-color: #68aade;
 $facebook-color: #3b5999;
 
 html {
+  padding-top: 80px;
   min-height: 100%;
 }
 
@@ -46,4 +47,11 @@ body {
   }
 }
 
+#confetti{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
 

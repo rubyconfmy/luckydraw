@@ -2,6 +2,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable
   has_many :identities, dependent: :destroy
 
+  scope :yet_to_win, -> { where(drawn_at: nil) }
+
   def self.find_for_oauth(auth, signed_in_resource = nil)
     identity = Identity.find_for_oauth(auth)
     user = signed_in_resource ? signed_in_resource : identity.user
@@ -28,5 +30,9 @@ class User < ApplicationRecord
     end
 
     user
+  end
+
+  def winner!
+    update(drawn_at: Time.now)
   end
 end
