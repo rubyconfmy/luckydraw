@@ -1,0 +1,35 @@
+<div class="card card-profile text-center">
+  <img class="card-img-top" src="https://images.unsplash.com/photo-1461884430365-0a87b6123549?dpr=1&auto=compress,format&fit=crop&w=2100&h=&q=80&cs=tinysrgb&crop=" alt="">
+  <div class="card-block">
+    <img class="card-img-profile" width="140" src="<%= current_user.avatar_url %>" alt="<%= current_user.name %>">
+    <h3 class="card-title">
+      <%= current_user.name %>
+      <br >
+      <br >
+      <small>
+        <% if current_user.drawn_at %>
+          <span>&#x1F389;</span>
+          <span>&#x1F381;</span>
+          <span>&#x1F38A;</span>
+          <span>&#x1F388;</span>
+          <span>&#x1F382;</span>
+          <span>&#x1F380;</span>
+          <p>You're a winner!</p>
+      <% else %>
+          <span>&#x1F635;</span>
+          <span>&#x1F631;</span>
+          <span>&#x1F628;</span>
+          <span>&#x1F623;</span>
+          <span>&#x1F616;</span>
+          <span>&#x1F613;</span>
+          <p>Don't panic just yet!</p>
+      <% end %>
+      </small>
+    </h3>
+  </div>
+</div>
+
+
+<div class="small text-center">
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+</div>

@@ -60,3 +60,4 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
 
+gem 'bootstrap', '~> 4.0.0.beta'

@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+  has_many :identities, dependent: :destroy
 
   def self.find_for_oauth(auth, signed_in_resource = nil)
     identity = Identity.find_for_oauth(auth)
@@ -14,7 +15,8 @@ class User < ApplicationRecord
           name: auth.extra.raw_info.name,
           username: auth.info.nickname || auth.uid,
           email: email,
-          password: Devise.friendly_token[0,20]
+          password: Devise.friendly_token[0, 20],
+          avatar_url: auth.extra.raw_info.avatar_url || ''
         )
         user.save!
       end
