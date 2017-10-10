@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :identities, dependent: :destroy
 
   scope :yet_to_win, -> { where(drawn_at: nil) }
+  scope :winners, -> { where.not(drawn_at: nil) }
 
   def self.find_for_oauth(auth, signed_in_resource = nil)
     identity = Identity.find_for_oauth(auth)
