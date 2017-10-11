@@ -1,12 +1,12 @@
 <% if @user %>
-  <h1 class="text-center"><%= get_emojis(mood: :happy, count: 25) %></h1>
+  <h1 class="text-center"><%= get_emojis(mood: :happy, count: 24) %></h1>
   <h1 class="text-center">You're a winner!</h1>
   <%= render 'users/user', user: @user %>
-  <h1 class="text-center"><%= get_emojis(mood: :happy, count: 25) %></h1>
+  <h1 class="text-center"><%= get_emojis(mood: :happy, count: 24) %></h1>
 <% else %>
-  <h1 class="text-center"><%= get_emojis(mood: :sad, count: 25) %></h1>
+  <h1 class="text-center"><%= get_emojis(mood: :sad, count: 24) %></h1>
   <h1 class="text-center">All winners have been drawn!</h1>
-  <h1 class="text-center"><%= get_emojis(mood: :sad, count: 25) %></h1>
+  <h1 class="text-center"><%= get_emojis(mood: :sad, count: 24) %></h1>
 <% end %>
 
 <% if @user %>
