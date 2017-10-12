@@ -3,7 +3,7 @@
   <div class="card-block">
     <img class="card-img-profile" width="140" src="<%= user.avatar_url %>" alt="<%= user.name %>">
     <h3 class="card-title">
-      <%= user.name %>
+      <%= user.name || user.username %>
       <br >
       <br >
       <small>
